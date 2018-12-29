@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'PingFang SC', 'Microsoft Yahei';
+  box-sizing: border-box;
+}
+
+ul { list-style: none; }
+img { width: 100%; align-items: center;}
+a { color: #000000; }
+svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+header {
+  background-color: rgba(57, 63, 70, .9);
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 0.625rem 0;
+  transition: all 0.2s;
+  opacity: 1;
+}
+
+header.float {
+  padding: 0;
+  box-shadow: 0 3px 14px 0 #ccc;
+}
+
+header .header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  width: 700px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-family: 'Cookie', cursive;
+  color: #ccc;
+  font-weight: 700;
+}
+header ul {
+  display: flex;
+}
+header ul > li {
+  margin-left: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+header ul > li svg.icon {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+header ul > li:hover svg.icon {
+  fill: rgba(57, 63, 70, .9);
+  transform: scale(1.2);
+}
+
+
+article.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+section {
+  margin: 3rem auto;
+  width: 100%;
+}
+section h2 {
+  color: rgba(57, 63, 70, .9);
+  margin: 1.25rem 0;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+section.loop .images > img {
+  position: absolute;
+  transition: all 0.3s;
+}
+
+section.loop .images > img.enter {
+  z-index: 1;
+  transform: translateX(0);
+}
+section.loop .images > img.leave {
+  z-index: -1;
+  transform: translateX(-100%);
+}
+section.loop .images > img.standby {
+  z-index: -1;
+  transform: translateX(100%);
+}
+section.loop .window {
+  width: 100%;
+  height: 464px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  position: relative;
+}
+section.loop .buttons {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.loop .buttons > div {
+  user-select: none;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.loop .buttons > div.prev {
+  left: 4px;
+}
+section.loop .buttons > div.next {
+  right: 4px;
+}
+section.loop .buttons > div svg.icon {
+  width: 100%;
+  height: 100%;
+  fill: #ffbba0;
+  transition: all 0.3s;
+}
+section.loop .buttons > div:hover {
+  background-color: rgba(98, 99, 100, 0.5);
+}
+section.loop .buttons > div:hover svg.icon {
+  fill: rgba(57, 63, 70, .9);
+}
+
+section.loop .items {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 8px;
+}
+section.loop .items > span {
+  cursor: pointer;
+  margin: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(98, 99, 100, 0.5);
+  transition: all 0.3s;
+}
+section.loop .items > span.active {
+  transform: scale(1.2);
+  background-color: rgba(57, 63, 70, .9);
+}
+
+
+section.thumb .thumbSlides_wrapper {
+  border: 1px solid #eee;
+}
+section.thumb .window {
+  width: 100%;
+  overflow: hidden;
+}
+section.thumb .window .images {
+  width: 2100px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+.controller {
+  padding: 6px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  position: relative;
+}
+.controller .thumbWindow {
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  width: 2.5rem;
+  height: 100%;
+  border: 1px solid #fff;
+  box-shadow: 0 0 16px 0px #fff inset;
+  transform: translateX(-1.25rem);
+}
+.controller .thumbBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(2.5rem);
+  transition: all 0.3s;
+}
+.controller li {
+  width: 2rem;
+  height: 1.6rem;
+  margin-right: 0.5rem;
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 0.3s;
+}
+.controller li:nth-child(1) {
+  background-image: url('./images/num1.png');
+}
+.controller li:nth-child(2) {
+  background-image: url('./images/num2.png');
+}
+.controller li:nth-child(3) {
+  background-image: url('./images/num3.png');
+  margin-right: 0;
+}
+.controller li.active {
+  opacity: 1;
+}
+
+
+footer {
+  max-width: 700px;
+  margin: 1.25rem auto;
+  text-align: center;
+  font-size: 0.8rem;
+}
+footer > a {
+  color: rgba(57, 63, 70, .9);
+}
